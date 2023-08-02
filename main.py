@@ -1,5 +1,9 @@
+
+
+
+import sys
+sys.path.append('/app/app/')
 from fastapi import FastAPI
-from model.responseBody import ResponseBody
 from model.requestBody import RequestBody
 from model.huggingface_sentiment import get_sentiment
 

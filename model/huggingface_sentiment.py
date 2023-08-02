@@ -4,6 +4,6 @@ from model.responseBody import ResponseBody
 
 def get_sentiment(requestBody: RequestBody):
     sentiment_pipeline = pipeline("sentiment-analysis")
-    data = ["I love you", "I hate you"]
     output = sentiment_pipeline(requestBody.sentence)
-    return ResponseBody(sentiment=output.label, probability=output.score)
+    print(output)
+    return ResponseBody(sentiment=output[0]['label'], probability=output[0]['score'])
